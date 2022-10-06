@@ -26,3 +26,7 @@ terraform state rm module.kubernetes_data
 terraform destroy
 ```  
 
+### TIPS
+
+**./list-rancher-k8s-slugs.sh**
+This helper quickly scraps the different versions for k8s and Rancher flavors.

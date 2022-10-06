@@ -5,6 +5,7 @@ do_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 prefix = "tochange"
 
 # Droplet sizes
+# doctl compute size list
 size = "s-4vcpu-8gb"
 
 # Image OS of hosts
@@ -35,13 +36,14 @@ rancher_cp_nodes = "0"
 rancher_worker_nodes = "0"
 
 # Set the local Rancher cluster kubernetes version
-# ./show-rancher-k8s-slugs.sh
+# ./list-rancher-k8s-slugs.sh
 rancher_kubernetes_version = "v1.22.11-rancher1-1"
 
 # Set Cert-Manager version
 cert_manager_version = "1.7.1"
 
 # Set the Rancher version
+# ./list-rancher-k8s-slugs.sh
 rancher_version = "2.6.8"
 
 # Set the admin password
@@ -67,7 +69,7 @@ downstream_cp_nodes = "0"
 downstream_worker_nodes = "0"
 
 # Set the downstream cluster Kubernetes version
-# ./show-rancher-k8s-slugs.sh
+# ./list-rancher-k8s-slugs.sh*
 downstream_kubernetes_version = "v1.22.11-rancher1-1"
 
 ####
@@ -88,4 +90,5 @@ rke2_cp_nodes = "0"
 rke2_worker_nodes = "0"
 
 # Set the RKE2 downstream cluster Kubernetes version
+# ./list-rancher-k8s-slugs.sh
 ke2_kubernetes_version = "v1.22.15+rke2r1"
