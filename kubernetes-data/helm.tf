@@ -1,6 +1,6 @@
 resource "helm_release" "cert_manager" {
   depends_on = [
-    local_file.rancher_kube_cluster_yaml,
+    rke_cluster.local-rancher,
   ]
 
   name                = "cert-manager"
