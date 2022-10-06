@@ -44,13 +44,3 @@ resource "rke_cluster" "local-rancher" {
 
   cluster_yaml          = var.use_cluster_yaml == true ? file("./rancher-cluster.yaml") : ""
 }
-
-resource "local_file" "rancher_kube_cluster_yaml" {
-  filename      = "./kubeconfig_rke_local-rancher.yml"
-  content       = rke_cluster.local-rancher.kube_config_yaml
-
-  provisioner "local-exec" {
-    command = "rm -f ./kubeconfig_rke_local-rancher.yml && rm -f local-rancher_rke.log"
-    when    = destroy
-  }
-}

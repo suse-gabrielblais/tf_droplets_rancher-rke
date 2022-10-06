@@ -21,3 +21,13 @@ module "kubernetes_data" {
   downstream_kubernetes_version = var.downstream_kubernetes_version
   rke2_kubernetes_version       = var.rke2_kubernetes_version
 }
+
+resource "local_file" "rancher_kubeconfig_yaml" {
+  filename      = "./kubeconfig_rke_local-rancher.yml"
+  content       = module.kubernetes_data.rancher_kubeconfig_yaml
+
+  provisioner "local-exec" {
+    command = "rm -f ./kubeconfig_rke_local-rancher.yml && rm -f local-rancher_rke.log"
+    when    = destroy
+  }
+}
