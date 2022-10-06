@@ -13,7 +13,20 @@ Copy the ***terraform.tfvars.example*** to ***terraform.tfvars*** and edit the f
 ```
 terraform init  
 terraform apply  
+```  
+  
+Use the generated ***id_rsa.pem*** file to connect to the Nodes with SSH.  
+  
+Check the current Rancher RKE cluster ongoing logs :  
 ```
+tail -f local-rancher_rke.log  
+```  
+  
+Connect to the Rancher RKE cluster :  
+```
+export KUBECONFIG="./kubeconfig_rke_local-rancher.yml"  
+```  
+  
 
 ### Destroy
 
