@@ -42,7 +42,7 @@ function rancherSlugs {
 }
 
 function rkeSlugs {
-  branch="$(curl -sL https://api.github.com/repos/rancher/kontainer-driver-metadata/branches | jq -r '.[].name' | grep 'release-')"
+  branch="$(curl -sL 'https://api.github.com/repos/rancher/kontainer-driver-metadata/branches?per_page=100' | jq -r '.[].name' | grep 'release-')"
   
   PS3="Choose a branch to use: "
   COLUMNS=20
